@@ -15,12 +15,11 @@
             </a>
         </section>
         <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            {{ $title }}{{ $entity->name }}
+            {{ $title }}{{ ucwords($entity->name) }}
         </h1>
     @else
         <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            <a href="/">Blog</a>
+            <a href="/">My Laravel Blog</a>
         </h1>
     @endif
-    <p class="mt-2 text-lg leading-8 text-gray-600">Lorem ipsum dolor sit amet, constetur magna cum laude magister semper finite.</p>
 </div>

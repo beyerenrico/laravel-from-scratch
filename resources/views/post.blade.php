@@ -11,7 +11,7 @@
             See all posts
         </a>
         <p class="text-base font-semibold leading-7 text-indigo-600">
-            <a class="secondary" href="/categories/{{ $post->category->slug }}">{{ $post->category->name  }}</a>
+            <a class="secondary" href="/categories/{{ $post->category->slug }}">{{ ucwords($post->category->name)  }}</a>
         </p>
         <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $post->title }}</h1>
         <figure class="my-8">
@@ -33,9 +33,9 @@
                 <time datetime="{{ date('Y-m-d', strtotime($post->created_at)) }}" class="text-gray-500">Published {{ $post->created_at->diffForHumans() }}</time>
             </div>
         </div>
-        <p class="text-xl leading-8">{{ $post->excerpt }}</p>
+        <div class="text-xl leading-8">{!! $post->excerpt !!}</div>
         <div class="mt-10">
-            <p>{{ $post->body }}</p>
+            {!! $post->body !!}
         </div>
     </div>
 </x-layout>
