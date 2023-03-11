@@ -15,5 +15,5 @@
         </div>
     @endif
 @else
-    <p class="text-center">No posts yet. Please check back later</p>
+    <p class="text-center mt-16">No posts yet. Please check back later</p>
 @endif

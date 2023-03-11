@@ -11,7 +11,7 @@
             See all posts
         </a>
         <p class="text-base font-semibold leading-7 text-indigo-600">
-            <a class="secondary" href="/categories/{{ $post->category->slug }}">{{ ucwords($post->category->name)  }}</a>
+            <a class="secondary" href="/?category={{ $post->category->slug }}">{{ ucwords($post->category->name)  }}</a>
         </p>
         <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $post->title }}</h1>
         <figure class="my-8">
@@ -19,12 +19,12 @@
         </figure>
         <div class="max-w-xl h-full flex gap-6 mb-8">
             <div class="relative flex items-center gap-x-4">
-                <img src="https://api.dicebear.com/5.x/personas/jpg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed={{ $post->user->name }}" alt="" class="h-10 w-10 rounded-full bg-gray-100">
+                <img src="https://api.dicebear.com/5.x/personas/jpg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed={{ $post->author->name }}" alt="" class="h-10 w-10 rounded-full bg-gray-100">
                 <div class="text-sm leading-6">
                     <p class="font-semibold text-gray-900">
-                        <a href="/authors/{{ $post->user->username }}">
+                        <a href="/?author={{ $post->author->username }}">
                             <span class="absolute inset-0"></span>
-                            {{ $post->user->name }}
+                            {{ $post->author->name }}
                         </a>
                     </p>
                 </div>
