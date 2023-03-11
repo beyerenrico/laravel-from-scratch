@@ -3,10 +3,7 @@
         :title="$title ?? null"
         :entity="$entity ?? null"
     />
-    <x-blog-toolbar
-        :categories="$categories"
-        :currentCategory="$currentCategory ?? null"
-    />
+    <x-blog-toolbar />
     <x-posts-grid
         :posts="$posts"
     />
