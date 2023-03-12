@@ -18,8 +18,8 @@
             {{ $title }}{{ ucwords($entity->name) }}
         </h1>
     @else
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            <a href="/">My Laravel Blog</a>
+        <h1 class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+            <a href="/">My <span class="font-bold text-indigo-600">Laravel</span> Blog</a>
         </h1>
     @endif
 </div>

@@ -3,7 +3,7 @@
 <article class="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 p-4 -m-4 transition hover:bg-gray-100 rounded-2xl">
     <div class="relative w-full">
         <a href="/posts/{{ $post->slug }}">
-            <img src="https://picsum.photos/seed/{{ $post->slug }}/800/300" alt="" class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+            <img src="https://picsum.photos/seed/{{ $post->slug }}/800/300" alt="" class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] h-full">
             <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
         </a>
     </div>

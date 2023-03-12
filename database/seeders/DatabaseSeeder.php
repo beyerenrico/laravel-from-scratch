@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -15,8 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory(30)
-            ->has(Post::factory(10))
+        Category::factory(5)
+            ->has(
+                Post::factory(10)
+                    ->has(
+                        Comment::factory(10)
+                    )
+            )
             ->create();
     }
 }

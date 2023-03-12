@@ -34,8 +34,10 @@
             </div>
         </div>
         <div class="text-xl leading-8">{!! $post->excerpt !!}</div>
-        <div class="mt-10">
+        <div class="mt-10 prose max-w-none">
             {!! $post->body !!}
         </div>
+
+        <x-comments :post="$post" />
     </div>
 </x-layout>

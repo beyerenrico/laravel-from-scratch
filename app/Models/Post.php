@@ -11,7 +11,7 @@ class Post extends Model
 
     protected $guarded = [];
 
-    protected $with = ['category', 'author'];
+    protected $with = ['category', 'author', 'comments'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -47,5 +47,10 @@ class Post extends Model
     public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function comments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Comment::class)->latest();
     }
 }
