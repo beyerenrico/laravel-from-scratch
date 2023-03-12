@@ -14,20 +14,43 @@
                     >Blog</a>
                 </div>
                 <div class="flex space-x-2 items-center ml-auto">
-                    <a
-                        href="/login"
-                        role="button"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                        Login
-                    </a>
-                    <a
-                        href="/register"
-                        role="button"
-                        class="inline-flex items-center gap-x-1.5 rounded-md py-1.5 px-2.5 text-sm font-normal shadow-sm text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline"
-                    >
-                        Register
-                    </a>
+                    @guest
+                        <a
+                            href="/login"
+                            role="button"
+                            class="flex w-full justify-center rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        >
+                            Login
+                        </a>
+                        <a
+                            href="/register"
+                            role="button"
+                            class="inline-flex items-center gap-x-1.5 rounded-md py-1.5 px-2.5 text-sm font-normal shadow-sm text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline"
+                        >
+                            Register
+                        </a>
+                    @endguest
+                    @auth
+                        <span>Welcome, {{ auth()->user()->name }}!</span>
+                        <div x-data="{show: false}" @click.outside="show = false" class="relative inline-block text-left">
+                            <div>
+                                <button @click="show = !show" type="button" class="flex items-center rounded-full bg-gray-100 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                    <span class="sr-only">Open options</span>
+                                    <img src="https://api.dicebear.com/5.x/personas/jpg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed={{ auth()->user()->username }}" alt="" class="h-10 w-10 rounded-full bg-gray-100">
+                                </button>
+                            </div>
+
+                            <div x-show="show" x-transition class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" style="display: none;">
+                                <div class="py-1" role="none">
+{{--                                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>--}}
+                                    <form method="POST" action="/logout" role="none">
+                                        @csrf
+                                        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endauth
                 </div>
             </div>
         </div>
