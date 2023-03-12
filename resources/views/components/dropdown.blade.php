@@ -1,6 +1,6 @@
 @props(['id', 'label', 'trigger'])
 
-<div>
+<div class="w-full">
     <label
         for="{{ $id }}"
         class="block text-sm font-medium leading-6 text-gray-900"

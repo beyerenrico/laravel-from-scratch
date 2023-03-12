@@ -11,7 +11,7 @@
         <div>
             <div class="mt-4 lg:mt-8 flex items-center gap-x-4 text-xs">
                 <time datetime="{{ date('Y-m-d', strtotime($post->created_at)) }}" class="text-gray-500">Published {{ $post->created_at->diffForHumans() }}</time>
-                <a href="/?category={{ $post->category->slug }}&{{ http_build_query(request()->except('category')) }}" class="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100">{{ ucwords($post->category->name)  }}</a>
+                <a href="/?category={{ $post->category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}" class="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100">{{ ucwords($post->category->name)  }}</a>
             </div>
             <div class="group relative mb-auto">
                 <h2 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
