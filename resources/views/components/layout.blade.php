@@ -18,6 +18,8 @@
         </div>
     </main>
 
+    <x-notification />
+
     @vite('resources/js/app.js')
 </body>
 </html>
