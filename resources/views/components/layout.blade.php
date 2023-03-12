@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html class="h-full bg-gray-50" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,10 +8,10 @@
     @vite('resources/css/app.css')
     <title>Laravel from Scratch</title>
 </head>
-<body>
+<body class="h-full">
     <x-navbar />
     <main class="container mx-auto">
-        <div class="bg-white py-8 sm:py-16">
+        <div class="py-8 sm:py-16">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 {{ $slot }}
             </div>
